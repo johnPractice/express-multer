@@ -28,9 +28,10 @@ const upload = multer({
 const app = express();
 app.use(express.static(__dirname + '/public'));
 app.post('/profile', upload.single('avatar'), (req, res) => {
+    console.log(multer.diskStorage.filename())
     res.json({
         "message": "ok"
     })
 });
 
-module.exports = app;
+module.exports = app    ;
